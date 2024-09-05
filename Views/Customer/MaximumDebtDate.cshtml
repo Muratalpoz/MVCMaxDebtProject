@@ -1,0 +1,36 @@
+@{
+    ViewBag.Title = "Maximum Debt Date";
+}
+
+<h2>Maximum Debt Date</h2>
+
+<p>The maximum debt date for the selected customer is: @ViewBag.Date</p>
+
+<canvas id="invoiceChart" width="400" height="200"></canvas>
+
+<script>
+    var invoiceDates = @Html.Raw(Json.Serialize(ViewBag.Dates));
+    var netDebts = @Html.Raw(Json.Serialize(ViewBag.NetDebts));
+
+    var ctx = document.getElementById('invoiceChart').getContext('2d');
+    var invoiceChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: invoiceDates,
+            datasets: [{
+                label: 'Net Borç',
+                data: netDebts,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

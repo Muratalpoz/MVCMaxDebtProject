@@ -1,0 +1,25 @@
+@model IEnumerable<MvcMaxDebtProject.Models.MusteriTanim>
+
+<h2>Müşteri Listesi</h2>
+
+<table class="customer-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ünvan</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Unvan</td>
+                <td>
+                    <a href="@Url.Action("MaximumDebtDate", "Customer", new { id = customer.Id })">Detaylar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
