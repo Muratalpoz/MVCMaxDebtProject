@@ -1,0 +1,1 @@
+MvcMaxDebtProject, müşteri faturalarını yönetmek ve müşterinin maksimum borca ulaştığı tarihi hesaplamak için tasarlanmış bir ASP.NET MVC uygulamasıdır. Proje, ASP.NET Core, C#, Entity Framework Core ve SQL Server kullanarak müşteri ve fatura verilerini etkin bir şekilde yönetir. Ayrıca, veri erişimi ve manipülasyonu için bir Web API desteği de içerir.
